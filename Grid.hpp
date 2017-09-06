@@ -38,7 +38,7 @@ class Grid {
     ifs.close();
   }
   CImg<unsigned char> getTopDownImage() {
-    CImg<unsigned char> img(XLEN, YLEN, 1, 3, 0);
+    CImg<unsigned char> img(XLEN, YLEN, 1, 3, 255);
     for (int x = 0; x < XLEN; ++x) {
       for (int y = 0; y < YLEN; ++y) {
 	for (int z = 0; z < ZLEN; ++z) {
