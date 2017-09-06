@@ -1,6 +1,9 @@
 #include "Grid.hpp"
 
+#include <iostream>
+
 int main() {
+  using namespace cimg_library;
   try {
     Grid<40, 40, 40> world;
     world.readPoints("test.dat");

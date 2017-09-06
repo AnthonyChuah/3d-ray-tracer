@@ -1,20 +1,19 @@
 #include <string>
 #include <vector>
-#include <stringstream>
 #include <fstream>
 #include <exception>
 
-#include "Point.hpp";
-#include "CImg.h";
+#include "Point.hpp"
+#include "CImg.h"
 
 using namespace cimg_library;
 
 template <int X, int Y, int Z>
 class Grid {
-  constexpr int XLEN = X;
-  constexpr int YLEN = Y;
-  constexpr int ZLEN = Z;
-  Point pointGrid[XLEN][YLEN][ZLEN];
+  int XLEN = X;
+  int YLEN = Y;
+  int ZLEN = Z;
+  Point pointGrid[X][Y][Z];
  public:
   void readPoints(std::string _filename) {
     std::ifstream ifs;
@@ -47,6 +46,7 @@ class Grid {
 	    img(x, y, 0) = static_cast<unsigned char>(pointGrid[x][y][z].r);
 	    img(x, y, 1) = static_cast<unsigned char>(pointGrid[x][y][z].g);
 	    img(x, y, 2) = static_cast<unsigned char>(pointGrid[x][y][z].b);
+	    break;
 	  }
 	}
       }
