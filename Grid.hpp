@@ -6,8 +6,6 @@
 #include "Point.hpp"
 #include "CImg.h"
 
-using namespace cimg_library;
-
 template <int X, int Y, int Z>
 class Grid {
   int XLEN = X;
@@ -38,6 +36,7 @@ class Grid {
     ifs.close();
   }
   CImg<unsigned char> getTopDownImage() {
+    using namespace cimg_library;
     CImg<unsigned char> img(XLEN, YLEN, 1, 3, 255);
     for (int x = 0; x < XLEN; ++x) {
       for (int y = 0; y < YLEN; ++y) {
