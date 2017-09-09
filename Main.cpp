@@ -5,7 +5,7 @@
 int main() {
   using namespace cimg_library;
   try {
-    Grid<40, 40, 40> world;
+    Grid world;
     world.readPoints("test.dat");
     CImg<unsigned char> img = world.getTopDownImage();
     img.save("topdown.png");
